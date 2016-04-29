@@ -1,0 +1,43 @@
+.part {
+    margin:20px;
+}
+
+
+#nameLabel {
+    margin-right:0px;
+}
+
+.form-group {
+    width:100%;
+}
+
+#fileCreators {
+    margin-top:100px;
+}
+
+#fileCreators > .panel-body, #operators > .panel-body {
+    padding-left: 30px;
+}
+
+#addCreator, #addOperator {
+    width:50px;
+    margin-left:-15px;
+    margin-top:0;
+}
+
+#addInstitution {
+    width:50px;
+    margin-left:190px;
+    margin-top:0;
+}
+
+.part {
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#valider {
+    width:60%;
+    margin-left:45px;
+}
