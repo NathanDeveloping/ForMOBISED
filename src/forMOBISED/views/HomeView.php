@@ -77,11 +77,15 @@ class HomeView
                     <div class="col-xs-6">
                         <label for="type">Type :</label>
                         <select class="selectpicker"  id="type" title="Type..." data-width="100%">
+                            <option>sediment</option>
+                            <option>hydrology</option>
+                            <option>spm</option>
+                            <option>water</option>
                         </select>
                      </div>
                     <div class="col-xs-6">
                         <label for="group">Group of measures :</label>
-                        <select class="selectpicker" id="group" title="Group of measures..." data-width="100%">
+                        <select class="selectpicker" id="group" title="Group of measures..." data-width="100%" disabled>
                         </select>
                     </div>
                 </div>
@@ -113,15 +117,16 @@ class HomeView
              <div class="panel panel-default" id="fileCreators">
                 <div class="panel-heading">File creator(s)</div>
                 <div class="panel-body">
-                 <form class="form-horizontal">
-                    <div class="form-group">
+                 <form class="form-horizontal formFileCreators">
+                    <div class="form-group" id="fileCreatorFormGroup1">
+                    
                         <div class="row">
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 <label class="control-label" id="nameLabel" for="name">Name :</label>
                                 <input type="text" id="name" class="form-control">
                             </div>
                         
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 <label class="control-label" for="firstname">Firstname :</label>
                                 <input type="text" id="firstname" class="form-control">
                             </div>
@@ -130,6 +135,8 @@ class HomeView
                                 <label class="control-label" for="email">Email :</label>
                                 <input type="text" id="email" class="form-control">
                             </div>
+                            
+                            <button type="button" class="btn btn-danger deleteButton deleteCreatorButton" id="deleteCreator1"><span class="glyphicon glyphicon-remove"></span></button>
                             
                         </div>
                      </div>
@@ -140,15 +147,15 @@ class HomeView
                <div class="panel panel-default" id="operators">
                 <div class="panel-heading">Operator(s)</div>
                 <div class="panel-body">
-                 <form class="form-horizontal">
-                    <div class="form-group">
+                 <form class="form-horizontal formOperators">
+                    <div class="form-group" id="operatorFormGroup1">
                         <div class="row">
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 <label class="control-label" id="nameLabel" for="nameOperator">Name :</label>
                                 <input type="text" id="nameOperator" class="form-control">
                             </div>
                         
-                            <div class="col-xs-4">
+                            <div class="col-xs-3">
                                 <label class="control-label" for="firstnameOperator">Firstname :</label>
                                 <input type="text" id="firstnameOperator" class="form-control">
                             </div>
@@ -158,6 +165,8 @@ class HomeView
                                 <input type="text" id="emailOperator" class="form-control">
                             </div>
                             
+                            <button type="button" class="btn btn-danger deleteButton deleteOperatorButton" id="deleteOperator1"><span class="glyphicon glyphicon-remove"></span></button>
+  
                         </div>
                      </div>
                 </form>
@@ -165,7 +174,7 @@ class HomeView
                </div>
              
     </div>
-     <form class="form-horizontal">
+     <form class="form-horizontal formLanguageInstitution">
                    <div class="form-group">
                         <label class="col-sm-4 control-label" for="title">Language :</label>
                         <div class="col-sm-8">
@@ -181,14 +190,15 @@ class HomeView
                         <div class="col-sm-8">
                             <input type="text" id="institution" class="form-control">
                        </div>
-             </div>
-                    <button class="btn navbar-btn btn-success btn-block col-xs-4" id="addInstitution"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                    
+                    <button type="button" class="btn navbar-btn btn-success btn-block col-xs-4" id="addInstitution"><span class="glyphicon glyphicon-plus"></span></button>
     </form>
 </div>
 </div>
 </div>
 
-<button class="btn navbar-btn btn-success btn-block" id="valider"><span class="glyphicon glyphicon-ok"></span> Valider</button>
+<button class="btn btn-success btn-block" id="valider"><span class="glyphicon glyphicon-ok"></span> Valider</button>
 <footer>
 </footer>
 
