@@ -24,8 +24,17 @@
 
 #addInstitution {
     width:50px;
-    margin-left:255px;
     margin-top:0;
+}
+
+.addButton {
+    width:50px;
+    margin-top:0;
+}
+
+#addSamplingDate {
+    margin-top : 0;
+    width:50px;
 }
 
 .part {
@@ -41,4 +50,25 @@
 
 .deleteButton {
     margin-top : 27px;
+}
+
+.placementDiv {
+    height:50px;
+}
+
+#measurement, #methodology {
+    margin:20px;
+}
+
+#settingCol {
+    margin-left : 15px;
+}
+
+#success {
+    display:none;
+}
+
+#errorSamplingDate {
+    display:none;
+    color:red;
 }

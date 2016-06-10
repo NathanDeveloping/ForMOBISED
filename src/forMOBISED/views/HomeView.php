@@ -67,7 +67,7 @@ class HomeView
     </nav>
 </header>
 
-<div class="container">
+<div class="container" id="formulaire">
     <div class="panel panel-default part row">
       <div class="panel-heading">KIND OF ANALYSIS</div>
       <div class="panel-body span7 center">
@@ -123,17 +123,17 @@ class HomeView
                         <div class="row">
                             <div class="col-xs-3">
                                 <label class="control-label" id="nameLabel" for="name">Name :</label>
-                                <input type="text" id="name" class="form-control">
+                                <input type="text" id="name" class="form-control name">
                             </div>
                         
                             <div class="col-xs-3">
                                 <label class="control-label" for="firstname">Firstname :</label>
-                                <input type="text" id="firstname" class="form-control">
+                                <input type="text" id="firstname" class="form-control firstname">
                             </div>
      
                             <div class="col-xs-4">
                                 <label class="control-label" for="email">Email :</label>
-                                <input type="text" id="email" class="form-control">
+                                <input type="text" id="email" class="form-control email">
                             </div>
                             
                             <button type="button" class="btn btn-danger deleteButton deleteCreatorButton" id="deleteCreator1"><span class="glyphicon glyphicon-remove"></span></button>
@@ -145,24 +145,24 @@ class HomeView
                </div>
                </div>
                <div class="panel panel-default" id="operators">
-                <div class="panel-heading">Operator(s)</div>
+                <div class="panel-heading">Operator(s) - optional</div>
                 <div class="panel-body">
                  <form class="form-horizontal formOperators">
                     <div class="form-group" id="operatorFormGroup1">
                         <div class="row">
                             <div class="col-xs-3">
-                                <label class="control-label" id="nameLabel" for="nameOperator">Name :</label>
-                                <input type="text" id="nameOperator" class="form-control">
+                                <label class="control-label" id="nameLabel" for="operatorName">Name :</label>
+                                <input type="text" id="nameOperator" class="form-control nameOperator">
                             </div>
                         
                             <div class="col-xs-3">
-                                <label class="control-label" for="firstnameOperator">Firstname :</label>
-                                <input type="text" id="firstnameOperator" class="form-control">
+                                <label class="control-label" for="operatorFirstname">Firstname :</label>
+                                <input type="text" id="firstnameOperator" class="form-control firstnameOperator">
                             </div>
      
                             <div class="col-xs-4">
-                                <label class="control-label" for="emailOperator">Email :</label>
-                                <input type="text" id="emailOperator" class="form-control">
+                                <label class="control-label" for="operatorEmail">Email :</label>
+                                <input type="text" id="emailOperator" class="form-control emailOperator">
                             </div>
                             
                             <button type="button" class="btn btn-danger deleteButton deleteOperatorButton" id="deleteOperator1"><span class="glyphicon glyphicon-remove"></span></button>
@@ -175,8 +175,28 @@ class HomeView
              
     </div>
      <form class="form-horizontal formLanguageInstitution">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="projectName">Project name :</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="projectName" class="form-control">
+                       </div>
+                    </div>
+                    
+                    <div class="form-group formGroupSamplingDate">
+                        <label class="col-sm-4 control-label" for="projectName">Sampling date(s) :</label>
+                        <div class="col-sm-3">
+                            <input id="samplingdate" type="date" name="samplingdate" class="samplingDate">
+                       </div>
+                       <p class="col-sm-5" id="errorSamplingDate">date incorrecte</p>
+                    </div>
+                    
+                    <div class="col-sm-4 placementDiv">
+                    </div>
+                    <button type="button" class="btn navbar-btn btn-success col-xs-1" id="addSamplingDate"><span class="glyphicon glyphicon-plus"></span></button>
+                    <div  class="col-sm-7 placementDiv">
+                    </div>
                    <div class="form-group">
-                        <label class="col-sm-4 control-label" for="title">Language :</label>
+                        <label class="col-sm-4 control-label" for="language">Language :</label>
                         <div class="col-sm-8">
                             <select class="selectpicker"  id="language" title="Language..." data-width="100%">
                                 <option>Français</option>
@@ -185,17 +205,150 @@ class HomeView
                         </div>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="form-group formGroupInstitution">
                         <label class="col-sm-4 control-label" for="institution">Institution(s) :</label>
                         <div class="col-sm-8">
-                            <input type="text" id="institution" class="form-control">
+                            <input type="text" id="institution" class="form-control institution">
                        </div>
                     </div>
                     
-                    <button type="button" class="btn navbar-btn btn-success btn-block col-xs-4" id="addInstitution"><span class="glyphicon glyphicon-plus"></span></button>
-    </form>
+                    <div class="col-xs-4 placementDiv">
+                    </div>
+                    <button type="button" class="btn navbar-btn btn-success btn-block col-xs-1" id="addInstitution"><span class="glyphicon glyphicon-plus"></span></button>
+                    <div  class="col-sm-7 placementDiv">
+                    </div>
+                    
+                    <div class="form-group formGroupScientificField">
+                        <label class="col-sm-4 control-label" for="scientificField">Scientific Field(s) :</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="scientificField" class="form-control scientificField">
+                       </div>
+                    </div>
+                    
+                    <div class="col-xs-4 placementDiv">
+                    </div>
+                    <button type="button" class="btn btn-success col-xs-1" id="addScientificField"><span class="glyphicon glyphicon-plus"></span></button>
+                    <div  class="col-sm-7 placementDiv">
+                    </div>
+                    
+                    <div class="form-group formGroupStation">
+                        <label class="col-sm-4 control-label" for="station">Station(s) :</label>
+                        <div class="col-sm-8">
+                            <select class="selectpicker"  id="station" title="Station..." data-width="100%" multiple>
+                                <option>AUB : <i>AUBOUE</i></option>
+                                <option>WOI : <i>AUBOUE WOIGOT</i></option>
+                                <option>BARB : <i>HOMERCOURT BARBUSSE</i></option>
+                                <option>HOMUPCOR2014 : <i>HOMECOURT DAM UPSTREAM CORING 2014 MARCH</i></option>
+                                <option>HOMUP : <i>HOMECOURT DAM UPSTREAM</i></option>
+                                <option>HOMDW : <i>HOMECOURT DAM DOWNSTREAM</i></option>
+                                <option>JOAB : <i>JOEUF ABATTOIR</i></option>
+                                <option>JOHA : <i>JOEUF-HAROPRE</i></option>
+                                <option>JOSAN : <i>JOEUF SAINTE ANNE</i></option>
+                                <option>BRO : <i>JOEUF BROUCHETIERE</i></option>
+                                <option>JOMED : <i>JOEUF MEDIATHEQUE</i></option>
+                                <option>JOMEDDW : <i>JOEUF MEDIATHEQUE DOWNSTREAM</i></option>
+                                <option>JOEP : <i>JOEUF EUROPIPE</i></option>
+                                <option>JOWWTP : <i>JOEUF WASTEWATER TREATMENT PLANT</i></option>
+                                <option>BETHUPB : <i>BETH DAM UPSTREAM B</i></option>
+                                <option>BETHUPCOR2014 : <i>BETH DAM UPSTREAM 2014 CORING</i></option>
+                                <option>BETHUPCOR2013 : <i>BETH DAM UPSTREAM 2013 CORING</i></option>
+                                <option>BETHUP : <i>BETH DAM UPSTREAM</i></option>
+                                <option>BETHDW : <i>BETH DAM DOWNSTREAM</i></option>
+                                <option>RICH : <i>RICHEMONT A31 BRIDGE</i></option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group formGroupSampleKind">
+                        <label class="col-sm-4 control-label" for="sampleKind">Sample kind(s) :</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="sampleKind" class="form-control sampleKind" placeholder="name">
+                       </div>
+                       <div class="col-sm-2">
+                            <input type="text" id="sampleKindAbbreviation" class="form-control sampleKindAbbreviation" placeholder="abbreviation">
+                       </div>
+                    </div>
+                    
+                    <div class="col-xs-4 placementDiv">
+                    </div>
+                    <button type="button" class="btn btn-success col-xs-1" id="addSampleKind"><span class="glyphicon glyphicon-plus"></span></button>
+                    <div  class="col-sm-7 placementDiv">
+                    </div>
+                   </div>
+                    
+                    <div class="panel panel-default" id="measurement">
+                        <div class="panel-heading">Measurement(s)</div>
+                            <div class="panel-body">
+                                <form class="form-horizontal formMeasurements">
+                                    <div class="form-group measurementFormGroup" id="measurementFormGroup1">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <label class="control-label" id="natureLabel" for="nature">Nature :</label>
+                                                <input type="text" id="nature" class="form-control nature">
+                                            </div>
+                        
+                                            <div class="col-xs-3">
+                                                <label class="control-label" for="abbreviation">Abbreviation :</label>
+                                                <input type="text" id="abbreviation" class="form-control abbreviation">
+                                            </div>
+     
+                                            <div class="col-xs-4">
+                                                <label class="control-label" for="unit">Unit :</label>
+                                                <input type="text" id="unit" class="form-control unit">
+                                            </div>
+                            
+                                            <button type="button" class="btn btn-danger deleteButton deleteMeasurementButton" id="deleteMeasurement1"><span class="glyphicon glyphicon-remove"></span></button>
+                                          
+                                        </div>
+                                    </div>
+                                </form>
+                                <button class="btn navbar-btn btn-success addButton" id="addMeasurement"><span class="glyphicon glyphicon-plus"></span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default" id="methodology">
+                            <div class="panel-heading">Methodology</div>
+                                <div class="panel-body" id="methodologyBody">
+                                    <form class="form-horizontal formMethodology">
+                                        <div class="form-group methodologyFormGroup" id="methodologyFormGroup1">
+                        
+                                            <div class="row">
+                                                <div class="col-xs-5" id="settingCol">
+                                                    <label class="control-label" id="settingLabel" for="">Setting :</label>
+                                                    <input type="text" id="setting" class="form-control setting">
+                                                </div>
+                            
+                                                <div class="col-xs-5">
+                                                    <label class="control-label" for="settingMethodology">Setting's methodology :</label>
+                                                    <input type="text" id="settingMethodology" class="form-control settingMethodology">
+                                                </div>
+         
+                                                <button type="button" class="btn btn-danger deleteButton deleteSettingButton" id="deleteSetting1"><span class="glyphicon glyphicon-remove"></span></button>
+                                              
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn navbar-btn btn-success addButton" id="addSetting"><span class="glyphicon glyphicon-plus"></span></button>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    </div>
+                    
+                    
+            </form>
 </div>
 </div>
+</div>
+
+<div class="container" id="success">
+    <div class="panel panel-default part row">
+        <div class="panel-heading">DATA</div>
+            <div class="panel-body span7 center">
+            <p>Les méta-données ont été enregistrées. Veuillez insérer le fichier tabulaire de données.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <button class="btn btn-success btn-block" id="valider"><span class="glyphicon glyphicon-ok"></span> Valider</button>
